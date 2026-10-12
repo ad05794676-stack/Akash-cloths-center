@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colorful Student Registration Form</title>
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2,
+                #ff758c
+            );
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           HEADING
+        ========================= */
+
+        h1 {
+            text-align: center;
+            color: white;
+
+            font-size: 34px;
+            margin-bottom: 25px;
+
+            text-shadow:
+                2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        form {
+            max-width: 900px;
+            margin: auto;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* =========================
+           FIELDSET
+        ========================= */
+
+        fieldset {
+            border: none;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f8f9ff,
+                    #eef2ff
+                );
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =========================
+           LEGEND
+        ========================= */
+
+        legend {
+            background:
+                linear-gradient(
+                    135deg,
+                    #667eea,
+                    #764ba2
+                );
+
+            color: white;
+
+            padding: 10px 20px;
+
+            border-radius: 20px;
+
+            font-size: 18px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           LABEL
+        ========================= */
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+
+        /* =========================
+           INPUT / SELECT / TEXTAREA
+        ========================= */
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            margin-top: 7px;
+
+            border: 2px solid #d9d9ff;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.3s;
+
+            background-color: white;
+        }
+
+
+        /* Focus Effect */
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #667eea;
+
+            box-shadow:
+                0 0 8px
+                rgba(102, 126, 234, 0.4);
+        }
+
+
+        textarea {
+            resize: vertical;
+        }
+
+
+        /* =========================
+           RADIO BUTTON
+        ========================= */
+
+        input[type="radio"] {
+            width: auto;
+
+            margin-right: 5px;
+
+            accent-color: #667eea;
+        }
+
+
+        /* =========================
+           CHECKBOX
+        ========================= */
+
+        input[type="checkbox"] {
+            width: auto;
+
+            margin-right: 5px;
+
+            accent-color: #764ba2;
+        }
+
+
+        /* =========================
+           RANGE
+        ========================= */
+
+        input[type="range"] {
+
+            accent-color: #667eea;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           COLOR PICKER
+        ========================= */
+
+        input[type="color"] {
+
+            width: 70px;
+
+            height: 45px;
+
+            padding: 3px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           FILE INPUT
+        ========================= */
+
+        input[type="file"] {
+
+            background: white;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           SOCIAL LINKS
+        ========================= */
+
+        .social-box {
+
+            display: flex;
+
+            gap: 15px;
+
+            margin-top: 10px;
+        }
+
+
+        .social-box a {
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .linkedin {
+
+            background: #0077b5;
+        }
+
+
+        .github {
+
+            background: #24292e;
+        }
+
+
+        .portfolio {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #667eea,
+                    #764ba2
+                );
+        }
+
+
+        .social-box a:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 7px 15px
+                rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* =========================
+           MULTIPLE SELECT
+        ========================= */
+
+        select[multiple] {
+
+            height: 130px;
+        }
+
+
+        /* =========================
+           PARAGRAPH
+        ========================= */
+
+        p {
+
+            font-weight: bold;
+
+            color: #333;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        button {
+
+            border: none;
+
+            padding: 13px 22px;
+
+            margin: 8px 5px 0 0;
+
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        /* Submit */
+
+        button[type="submit"] {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00b09b,
+                    #96c93d
+                );
+
+            color: white;
+        }
+
+
+        /* Reset */
+
+        button[type="reset"] {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff416c,
+                    #ff4b2b
+                );
+
+            color: white;
+        }
+
+
+        /* Normal Button */
+
+        button[type="button"] {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #667eea,
+                    #764ba2
+                );
+
+            color: white;
+        }
+
+
+        /* Button Hover */
+
+        button:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 7px 15px
+                rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding: 15px 8px;
+            }
+
+
+            form {
+
+                padding: 18px;
+            }
+
+
+            fieldset {
+
+                padding: 18px;
+            }
+
+
+            h1 {
+
+                font-size: 25px;
+            }
+
+
+            button {
+
+                width: 100%;
+
+                margin-top: 10px;
+            }
+
+
+            .social-box {
+
+                flex-direction: column;
+            }
+
+
+            .social-box a {
+
+                text-align: center;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MAIN HEADING
+    ========================= -->
+
+    <h1>🎓 Student Registration Form</h1>
+
+
+    <!-- =========================
+         FORM START
+    ========================= -->
+
+    <form
+        action="/submit"
+        method="post"
+        enctype="multipart/form-data"
+    >
+
+
+        <!-- Hidden Input -->
+
+        <input
+            type="hidden"
+            name="formType"
+            value="student-registration"
+        >
+
+
+        <!-- =========================
+             PERSONAL INFORMATION
+        ========================= -->
+
+        <fieldset>
+
+            <legend>👤 Personal Information</legend>
+
+
+            <!-- Full Name -->
+
+            <label for="fullName">
+                Full Name:
+            </label>
+
+            <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your full name"
+                required
+                minlength="3"
+                maxlength="50"
+            >
+
+
+            <br><br>
+
+
+            <!-- Email -->
+
+            <label for="email">
+                Email:
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@gmail.com"
+                required
+            >
+
+
+            <br><br>
+
+
+            <!-- Password -->
+
+            <label for="password">
+                Password:
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter password"
+                required
+                minlength="8"
+            >
+
+
+            <br><br>
+
+
+            <!-- Phone -->
+
+            <label for="phone">
+                Phone Number:
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="9876543210"
+                pattern="[0-9]{10}"
+                required
+            >
+
+
+            <br><br>
+
+
+            <!-- DOB -->
+
+            <label for="dob">
+                Date of Birth:
+            </label>
+
+            <input
+                type="date"
+                id="dob"
+                name="dob"
+                required
+            >
+
+
+            <br><br>
+
+
+            <!-- Time -->
+
+            <label for="preferredTime">
+                Preferred Time:
+            </label>
+
+            <input
+                type="time"
+                id="preferredTime"
+                name="preferredTime"
+            >
+
+
+            <br><br>
+
+
+            <!-- Gender -->
+
+            <p>Gender:</p>
+
+
+            <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                required
+            >
+
+            <label for="male">
+                Male
+            </label>
+
+
+            <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="female"
+            >
+
+            <label for="female">
+                Female
+            </label>
+
+
+            <input
+                type="radio"
+                id="other"
+                name="gender"
+                value="other"
+            >
+
+            <label for="other">
+                Other
+            </label>
+
+
+        </fieldset>
+
+
+
+        <!-- =========================
+             ACADEMIC INFORMATION
+        ========================= -->
+
+        <fieldset>
+
+            <legend>🎓 Academic Information</legend>
+
+
+            <!-- Course -->
+
+            <label for="course">
+                Select Course:
+            </label>
+
+            <select
+                id="course"
+                name="course"
+                required
+            >
+
+                <option value="">
+                    -- Select Course --
+                </option>
+
+                <option value="bca">
+                    BCA
+                </option>
+
+                <option value="btech">
+                    B.Tech
+                </option>
+
+                <option value="bsc">
+                    B.Sc
+                </option>
+
+                <option value="mca">
+                    MCA
+                </option>
+
+                <option value="mtech">
+                    M.Tech
+                </option>
+
+            </select>
+
+
+            <br><br>
+
+
+            <!-- Programming Languages -->
+
+            <label for="languages">
+                Known Programming Languages:
+            </label>
+
+            <br>
+
+
+            <select
+                id="languages"
+                name="languages"
+                multiple
+                size="4"
+            >
+
+                <option value="html">
+                    HTML
+                </option>
+
+                <option value="css">
+                    CSS
+                </option>
+
+                <option value="javascript">
+                    JavaScript
+                </option>
+
+                <option value="java">
+                    Java
+                </option>
+
+                <option value="python">
+                    Python
+                </option>
+
+                <option value="cpp">
+                    C++
+                </option>
+
+            </select>
+
+
+            <br><br>
+
+
+            <!-- Age -->
+
+            <label for="age">
+                Age:
+            </label>
+
+            <input
+                type="number"
+                id="age"
+                name="age"
+                min="16"
+                max="60"
+                step="1"
+                required
+            >
+
+
+            <br><br>
+
+
+            <!-- Skill Level -->
+
+            <label for="skill">
+                Programming Skill Level:
+            </label>
+
+            <input
+                type="range"
+                id="skill"
+                name="skill"
+                min="0"
+                max="100"
+                value="50"
+            >
+
+
+            <br><br>
+
+
+            <!-- City -->
+
+            <label for="city">
+                City:
+            </label>
+
+            <input
+                list="cities"
+                id="city"
+                name="city"
+                placeholder="Start typing your city"
+            >
+
+
+            <datalist id="cities">
+
+                <option value="Delhi">
+                <option value="Mumbai">
+                <option value="Bangalore">
+                <option value="Hyderabad">
+                <option value="Pune">
+                <option value="Noida">
+                <option value="Gurugram">
+
+            </datalist>
+
+
+        </fieldset>
+
+
+
+        <!-- =========================
+             ADDRESS INFORMATION
+        ========================= -->
+
+        <fieldset>
+
+            <legend>🏠 Address Information</legend>
+
+
+            <!-- Address -->
+
+            <label for="address">
+                Address:
+            </label>
+
+            <br>
+
+            <textarea
+                id="address"
+                name="address"
+                rows="5"
+                placeholder="Enter your complete address"
+                required
+            ></textarea>
+
+
+            <br><br>
+
+
+            <!-- PIN -->
+
+            <label for="pincode">
+                PIN Code:
+            </label>
+
+            <input
+                type="text"
+                id="pincode"
+                name="pincode"
+                placeholder="201301"
+                pattern="[0-9]{6}"
+                maxlength="6"
+                required
+            >
+
+
+        </fieldset>
+
+
+
+        <!-- =========================
+             SKILLS & INTERESTS
+        ========================= -->
+
+        <fieldset>
+
+            <legend>💻 Skills & Interests</legend>
+
+
+            <p>
+                Select your skills:
+            </p>
+
+
+            <!-- HTML -->
+
+            <input
+                type="checkbox"
+                id="html"
+                name="skills"
+                value="html"
+            >
+
+            <label for="html">
+                HTML
+            </label>
+
+
+            <!-- CSS -->
+
+            <input
+                type="checkbox"
+                id="css"
+                name="skills"
+                value="css"
+            >
+
+            <label for="css">
+                CSS
+            </label>
+
+
+            <!-- JavaScript -->
+
+            <input
+                type="checkbox"
+                id="javascript"
+                name="skills"
+                value="javascript"
+            >
+
+            <label for="javascript">
+                JavaScript
+            </label>
+
+
+            <!-- React -->
+
+            <input
+                type="checkbox"
+                id="react"
+                name="skills"
+                value="react"
+            >
+
+            <label for="react">
+                React
+            </label>
+
+
+            <!-- Java -->
+
+            <input
+                type="checkbox"
+                id="java"
+                name="skills"
+                value="java"
+            >
+
+            <label for="java">
+                Java
+            </label>
+
+
+            <br><br>
+
+
+            <!-- LinkedIn -->
+
+            <label for="linkedin">
+                🔗 LinkedIn Profile:
+            </label>
+
+            <input
+                type="url"
+                id="linkedin"
+                name="linkedin"
+                placeholder="https://www.linkedin.com/in/your-profile"
+            >
+
+
+            <br><br>
+
+
+            <!-- GitHub -->
+
+            <label for="github">
+                🐙 GitHub Profile:
+            </label>
+
+            <input
+                type="url"
+                id="github"
+                name="github"
+                placeholder="https://github.com/your-username"
+            >
+
+
+            <br><br>
+
+
+            <!-- Portfolio -->
+
+            <label for="website">
+                🌐 Portfolio Website:
+            </label>
+
+            <input
+                type="url"
+                id="website"
+                name="website"
+                placeholder="https://yourportfolio.com"
+            >
+
+
+            <br><br>
+
+
+            <!-- Social Buttons -->
+
+            <div class="social-box">
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    class="linkedin"
+                >
+                    🔗 Open LinkedIn
+                </a>
+
+
+                <a
+                    href="https://github.com/"
+                    target="_blank"
+                    class="github"
+                >
+                    🐙 Open GitHub
+                </a>
+
+
+                <a
+                    href="#"
+                    class="portfolio"
+                >
+                    🌐 Portfolio
+                </a>
+
+            </div>
+
+
+            <br><br>
+
+
+            <!-- Favorite Color -->
+
+            <label for="color">
+                🎨 Favorite Color:
+            </label>
+
+            <br>
+
+            <input
+                type="color"
+                id="color"
+                name="color"
+                value="#667eea"
+            >
+
+
+        </fieldset>
+
+
+
+        <!-- =========================
+             DOCUMENT UPLOAD
+        ========================= -->
+
+        <fieldset>
+
+            <legend>📁 Document Upload</legend>
+
+
+            <!-- Resume -->
+
+            <label for="resume">
+                Upload Resume:
+            </label>
+
+            <input
+                type="file"
+                id="resume"
+                name="resume"
+                accept=".pdf,.doc,.docx"
+                required
+            >
+
+
+            <br><br>
+
+
+            <!-- Photo -->
+
+            <label for="photo">
+                Upload Profile Photo:
+            </label>
+
+            <input
+                type="file"
+                id="photo"
+                name="photo"
+                accept="image/*"
+            >
+
+
+        </fieldset>
+
+
+
+        <!-- =========================
+             CONFIRMATION
+        ========================= -->
+
+        <fieldset>
+
+            <legend>✅ Confirmation</legend>
+
+
+            <!-- Terms -->
+
+            <input
+                type="checkbox"
+                id="terms"
+                name="terms"
+                value="accepted"
+                required
+            >
+
+            <label for="terms">
+                I agree to the terms and conditions.
+            </label>
+
+
+            <br><br>
+
+
+            <!-- Newsletter -->
+
+            <input
+                type="checkbox"
+                id="newsletter"
+                name="newsletter"
+                value="yes"
+            >
+
+            <label for="newsletter">
+                Subscribe me to the newsletter.
+            </label>
+
+
+        </fieldset>
+
+
+
+        <!-- =========================
+             BUTTONS
+        ========================= -->
+
+        <button type="submit">
+        
+        </button>
+
+
+        <button type="reset">
+    
+        </button>
+
+
+        <button type="button">
+        
+        </button>
+
+
+    </form>
+
+
+</body>
+
+</html>
